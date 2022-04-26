@@ -1,6 +1,9 @@
 import React from "react";
 import { Typography, Icon } from 'antd';
 import Chatbot from './Chatbot/Chatbot';
+import Home from "./Component/Home";
+import Signup from "./Component/Signup";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 const { Title } = Typography;
 
 function App() {
@@ -11,7 +14,19 @@ function App() {
       </div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
        
-        <Chatbot />
+      {/* <Home></Home> */}
+      {/* <Signup></Signup>
+      <Chatbot /> */}
+
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="singup" element={<Signup />} />
+          <Route path="chatbot" element={<Chatbot />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
 
 
       </div>
